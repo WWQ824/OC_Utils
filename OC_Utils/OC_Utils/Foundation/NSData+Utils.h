@@ -28,16 +28,52 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSData (Utils)
 
+
+/**
+ MD5加密
+ */
 - (NSString *)u_md5String;
 
+
+/**
+ base64编码
+ */
 - (NSString *)u_base64EncodedString;
+
+
+/**
+ base64编码
+ */
 - (NSString *)u_base64EncodedStringWithLineLength:(NSUInteger)lineLength;
+
+
+/**
+ base64解码
+ */
 - (NSData *)u_base64Decoded;
 
+
+/**
+ 是否有这个前缀字节
+ */
 - (BOOL)u_hasPrefixBytes:(const void *)prefix length:(NSUInteger)length;
+
+
+/**
+ 是否有这个后缀字节
+ */
 - (BOOL)u_hasSuffixBytes:(const void *)suffix length:(NSUInteger)length;
 
+
+/**
+ 图片格式
+ */
 @property (nonatomic, readonly) UImageFormat imageFormat;
+
+
+/**
+ 图片格式名称
+ */
 @property (nonatomic, readonly, nullable, copy) NSString *imageMIMEType;
 
 
