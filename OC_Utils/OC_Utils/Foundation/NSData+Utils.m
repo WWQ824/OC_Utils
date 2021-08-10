@@ -9,7 +9,7 @@
 #import "NSString+Utils.h"
 #import "NSData+Utils.h"
 
-static char spt_base64EncodingTable[64] = {
+static char u_base64EncodingTable[64] = {
     'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P',
     'Q','R','S','T','U','V','W','X','Y','Z','a','b','c','d','e','f',
     'g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v',
@@ -115,7 +115,7 @@ NSString *u_image_MIME_type_for_format(UImageFormat format) {
         }
         
         for (i = 0; i < ctcopy; i++) {
-            [result appendFormat:@"%c", spt_base64EncodingTable[outbuf[i]]];
+            [result appendFormat:@"%c", u_base64EncodingTable[outbuf[i]]];
         }
         
         for (i = ctcopy; i < 4; i++) {
