@@ -28,6 +28,7 @@
 		7C26328026C3696500454B00 /* NSNull+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C26327F26C3696500454B00 /* NSNull+Utils.m */; };
 		7C26328326C369ED00454B00 /* NSObject+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C26328226C369ED00454B00 /* NSObject+Utils.m */; };
 		7C26328626C36A3900454B00 /* NSURL+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C26328526C36A3900454B00 /* NSURL+Utils.m */; };
+		7C26328A26C3D4E500454B00 /* UIColor+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C26328926C3D4E500454B00 /* UIColor+Utils.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +72,8 @@
 		7C26328226C369ED00454B00 /* NSObject+Utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Utils.m"; sourceTree = "<group>"; };
 		7C26328426C36A3900454B00 /* NSURL+Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSURL+Utils.h"; sourceTree = "<group>"; };
 		7C26328526C36A3900454B00 /* NSURL+Utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSURL+Utils.m"; sourceTree = "<group>"; };
+		7C26328826C3D4E500454B00 /* UIColor+Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Utils.h"; sourceTree = "<group>"; };
+		7C26328926C3D4E500454B00 /* UIColor+Utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Utils.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +106,7 @@
 		7C26323E26C2654400454B00 /* OC_Utils */ = {
 			isa = PBXGroup;
 			children = (
+				7C26328726C3CEE900454B00 /* UIKit */,
 				7C26325C26C2680200454B00 /* Foundation */,
 				7C26323F26C2654400454B00 /* AppDelegate.h */,
 				7C26324026C2654400454B00 /* AppDelegate.m */,
@@ -152,6 +156,15 @@
 				7C26328526C36A3900454B00 /* NSURL+Utils.m */,
 			);
 			path = Foundation;
+			sourceTree = "<group>";
+		};
+		7C26328726C3CEE900454B00 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				7C26328826C3D4E500454B00 /* UIColor+Utils.h */,
+				7C26328926C3D4E500454B00 /* UIColor+Utils.m */,
+			);
+			path = UIKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,6 +239,7 @@
 				7C26326226C26EF000454B00 /* NSData+Utils.m in Sources */,
 				7C26328026C3696500454B00 /* NSNull+Utils.m in Sources */,
 				7C26326E26C364F000454B00 /* NSAttributedString+Utils.m in Sources */,
+				7C26328A26C3D4E500454B00 /* UIColor+Utils.m in Sources */,
 				7C26324726C2654400454B00 /* ViewController.m in Sources */,
 				7C26328626C36A3900454B00 /* NSURL+Utils.m in Sources */,
 				7C26327D26C3686400454B00 /* NSFileManager+Utils.m in Sources */,

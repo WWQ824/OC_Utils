@@ -21,7 +21,7 @@
             if (signature) {
                 //判断是否返回对象 主要是处理 空数组根据索引取对象
                 if (strcmp(signature.methodReturnType, "@") == 0) {
-                    signature = [[NSNull null] methodSignatureForSelector:@selector(__spt_safe_nil)];
+                    signature = [[NSNull null] methodSignatureForSelector:@selector(__u_safe_nil)];
                 }
                 break;
             }
@@ -33,7 +33,7 @@
 - (void)forwardInvocation:(NSInvocation *)anInvocation {
     //判断是否返回对象 主要是处理 空数组根据索引取对象
     if (strcmp(anInvocation.methodSignature.methodReturnType, "@") == 0) {
-           anInvocation.selector = @selector(__spt_safe_nil);
+           anInvocation.selector = @selector(__u_safe_nil);
            [anInvocation invokeWithTarget:self];
            return;
     }
@@ -47,7 +47,7 @@
     [self doesNotRecognizeSelector:anInvocation.selector];
 }
 
-- (id)__spt_safe_nil {
+- (id)__u_safe_nil {
     return nil;
 }
 
