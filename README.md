@@ -374,7 +374,73 @@ string encode编码<br>
 ```ObjectiveC
 @property (nonatomic, readonly, nullable, copy) NSString *imageMIMEType;
 ```
+
 # NSArray
+
+/** <br>
+ 获取符合正则的数据 <br>
+ @param predicate 正则的block <br>
+ */
+```ObjectiveC
+- (NSArray<ObjectType> *)u_arrayWithObjectsPassingTest:(BOOL (^)(id obj, NSUInteger idx, BOOL *stop))predicate;
+```
+
+/** <br>
+ 移除class为aClass的对象 <br>
+ */
+```ObjectiveC
+- (NSArray<ObjectType> *)u_arrayByRemovingObjectsOfClass:(Class)aClass;
+```
+
+/** <br>
+ 保留class为aClass的对象 <br>
+ */
+```ObjectiveC
+- (NSArray<ObjectType> *)u_arrayByKeepingObjectsOfClass:(Class)aClass;
+```
+
+/** <br>
+ 将otherArray里面的对象从当前数组移除 <br>
+ */
+```ObjectiveC
+- (NSArray<ObjectType> *)u_arrayByRemovingObjectsFromArray:(NSArray<ObjectType> *)otherArray;
+```
+
+/** <br>
+ 获取符合正则的对象 <br>
+ */
+```ObjectiveC
+- (nullable ObjectType)u_objectPassingTest:(BOOL (^)(id obj, NSUInteger idx, BOOL *stop))predicate;
+```
+
+/** <br>
+ 取出某一位置的对象，有边界检查 <br>
+ */
+```ObjectiveC
+- (nullable ObjectType)u_nullableObjectAtIndex:(NSInteger)index;
+```
+
+/** <br>
+ duplicate objects with other array. <br>
+ */
+```ObjectiveC
+- (NSArray<ObjectType> *)u_duplicateObjectsWithArray:(NSArray<ObjectType> *)otherArray;
+```
+
+/** <br>
+ 用handler进行匹配 <br>
+ */
+```ObjectiveC
+- (NSArray *)u_mapUsing:(id (^)(ObjectType originalObject, NSUInteger index))handler;
+```
+
+/** <br>
+ 数组转json字符串 <br>
+ */
+```ObjectiveC
+- (nullable NSString *)u_JSONString;
+```
+
 # NSMutableArray
 # NSDate
 # NSAttributedString
