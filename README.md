@@ -5,8 +5,8 @@ OC工具类
 
 # NSString
 
-/**
- 判断是否包含表情
+/**<br>
+ 判断是否包含表情<br>
  */
 ```ObjectiveC
 @property (nonatomic, readonly) BOOL u_containsEmoji;
