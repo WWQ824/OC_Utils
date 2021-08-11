@@ -11,39 +11,46 @@ OC工具类
 /**
  判断是否包含表情
  */
+
 @property (nonatomic, readonly) BOOL u_containsEmoji;
 
 /**
  判断是否是干净的Int数据
  */
+
 @property (nonatomic, readonly) BOOL u_isPureIntNumber;
 
 /**
  判断是否是邮箱
  */
+
 @property (nonatomic, readonly) BOOL u_isEmail;
 
 /**
  判断是否是身份证
  */
+
 @property (nonatomic, readonly) BOOL u_isIDCard;
 
 
 /**
  判断是否是中文字符
  */
+
 @property (nonatomic, readonly) BOOL u_isChineseCharacter;
 
 
 /**
  是否是number或者英文或者中文
  */
+
 @property (nonatomic, readonly) BOOL u_isNumberOrEnglishOrChineseCharacter;
 
 
 /**
  是否是纯正的Decimal
  */
+
 @property (nonatomic, readonly) BOOL u_isPureDecimalDigits;
 
 
@@ -52,6 +59,7 @@ OC工具类
  
  @return YES：包含了非法字符 NO：没有包含非法字符
  */
+
 @property (nonatomic, readonly) BOOL u_containInvalidString;
 
 
@@ -71,11 +79,13 @@ OC工具类
 /**
  sha1加密
  */
+
 @property (nonatomic, readonly, copy) NSString *u_sha1String;
 
 /**
  string 转 base64 Data
  */
+
 @property (nonatomic, readonly, copy) NSData *u_base64Data;
 
 @property (nonatomic, nullable, readonly, copy) NSString *u_base64Encoded;
@@ -83,22 +93,26 @@ OC工具类
 /**
  base64 encode  safe
  */
+
 @property (nonatomic, nullable, readonly, copy) NSString *u_base64EncodedSafe;
 
 /**
  base64 decode  safe
  */
+
 @property (nonatomic, nullable, readonly, copy) NSString *u_base64DecodedSafe;
 
 
 /**
  去空格、空行
  */
+
 @property (nonatomic, readonly, copy) NSString *u_stringByTrimmingWhitespaceAndNewlineCharacters;
 
 /**
 string encode编码
  */
+
 @property (nonatomic, readonly, copy) NSString *u_URLEncoded;
 
 /**
@@ -113,7 +127,7 @@ string encode编码
  @param format 格式
  @return 按format格式返回string
  */
-+ (NSString *)u_StringWithDate:(NSDate *)date dateFormat:(nullable NSString *)format;
+\+ (NSString *)u_StringWithDate:(NSDate *)date dateFormat:(nullable NSString *)format;
 
 /**
  版本字符串比较
@@ -121,7 +135,7 @@ string encode编码
  @param string 版本号
  @return 升序、降序、相等
  */
-- (NSComparisonResult)u_versionNumberCompare:(NSString *)string;
+\- (NSComparisonResult)u_versionNumberCompare:(NSString *)string;
 
 
 /**
@@ -136,12 +150,12 @@ string encode编码
 /**
  取出字符串中第一个url的rang
  */
-- (NSRange)u_firstRangeOfURLSubstring;
+\- (NSRange)u_firstRangeOfURLSubstring;
 
 /**
  取出字符串中第一个url
  */
-- (nullable NSString *)u_firstURLSubstring;
+\- (nullable NSString *)u_firstURLSubstring;
 
 /**
  根据正则匹配符合的第一个字符串
