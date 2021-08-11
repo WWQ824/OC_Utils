@@ -29,6 +29,7 @@
 		7C26328326C369ED00454B00 /* NSObject+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C26328226C369ED00454B00 /* NSObject+Utils.m */; };
 		7C26328626C36A3900454B00 /* NSURL+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C26328526C36A3900454B00 /* NSURL+Utils.m */; };
 		7C26328A26C3D4E500454B00 /* UIColor+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C26328926C3D4E500454B00 /* UIColor+Utils.m */; };
+		7C26328D26C3F11B00454B00 /* UIImage+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C26328C26C3F11B00454B00 /* UIImage+Utils.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +75,8 @@
 		7C26328526C36A3900454B00 /* NSURL+Utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSURL+Utils.m"; sourceTree = "<group>"; };
 		7C26328826C3D4E500454B00 /* UIColor+Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Utils.h"; sourceTree = "<group>"; };
 		7C26328926C3D4E500454B00 /* UIColor+Utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Utils.m"; sourceTree = "<group>"; };
+		7C26328B26C3F11B00454B00 /* UIImage+Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Utils.h"; sourceTree = "<group>"; };
+		7C26328C26C3F11B00454B00 /* UIImage+Utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Utils.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +166,8 @@
 			children = (
 				7C26328826C3D4E500454B00 /* UIColor+Utils.h */,
 				7C26328926C3D4E500454B00 /* UIColor+Utils.m */,
+				7C26328B26C3F11B00454B00 /* UIImage+Utils.h */,
+				7C26328C26C3F11B00454B00 /* UIImage+Utils.m */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -255,6 +260,7 @@
 				7C26327426C3659C00454B00 /* NSDictionary+Utils.m in Sources */,
 				7C26328326C369ED00454B00 /* NSObject+Utils.m in Sources */,
 				7C26326826C3621700454B00 /* NSMutableArray+Utils.m in Sources */,
+				7C26328D26C3F11B00454B00 /* UIImage+Utils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

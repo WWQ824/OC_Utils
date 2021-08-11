@@ -49,7 +49,7 @@ typedef backBlock(^TestBlock)(BOOL);
     self.add(1).add(2).add(3);
     [self add](1);
     NSLog(@"%@", @(self.result));
-    // 最后一个不会有打印,是因为返回的block为调用
+    // 最后一个不会有打印,是因为返回的block未调用
     self.testBlock(YES)(20).testBlock(NO)(60).testBlock(YES);
  
     [self configSubviews];
