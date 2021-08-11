@@ -282,7 +282,7 @@ string encode编码<br>
 /**<br>
  计算字符串height<br>
  @param font 字体<br>
- @param maxWidth 最大宽<br><br>
+ @param maxWidth 最大宽<br>
  @param maxLineCount 最大行数<br>
  @return 计算好的height<br>
  */
