@@ -11,7 +11,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSNumber (Utils)
 
-
+/**
+  number 转 string
+ */
 @property (nonatomic, readonly, copy) NSString *u_formattedString;
 
 
