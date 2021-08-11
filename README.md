@@ -52,7 +52,7 @@ OC工具类
 ```
 
 /**<br>  
- 是否包含非法字符<br>  
+ 是否包含非法字符<br>
  @return YES：包含了非法字符 NO：没有包含非法字符<br>  
  */
 ```ObjectiveC
@@ -200,7 +200,7 @@ string encode编码<br>
 ```
 
 /**<br>
-第一个符合正则表达式的rang<br>
+ 第一个符合正则表达式的rang<br>
  @param regularExpressionPattern 正则表达式<br>
  */
 ```ObjectiveC
@@ -268,7 +268,7 @@ string encode编码<br>
 ```
 
 /** <br>
-  计算字符串size <br>
+ 计算字符串size <br>
  @param font 字体 <br>
  @param maxWidth 最大宽度 <br>
  @param maxLineCount 最大行数 <br>
@@ -322,51 +322,58 @@ string encode编码<br>
 /**<br>
  MD5加密<br>
  */
-
+```ObjectiveC
 - (NSString *)u_md5String;
+```
 
-
-/**
- base64编码
+/**<br>
+ base64编码<br>
  */
+```ObjectiveC
 - (NSString *)u_base64EncodedString;
+```
 
-
-/**
- base64编码
+/**<br>
+ base64编码<br>
  */
+```ObjectiveC
 - (NSString *)u_base64EncodedStringWithLineLength:(NSUInteger)lineLength;
+```
 
-
-/**
- base64解码
+/**<br>
+ base64解码<br>
  */
+```ObjectiveC
 - (NSData *)u_base64Decoded;
+```
 
-
-/**
- 是否有这个前缀字节
+/**<br>
+ 是否有这个前缀字节<br>
  */
+```ObjectiveC
 - (BOOL)u_hasPrefixBytes:(const void *)prefix length:(NSUInteger)length;
+```
 
-
-/**
- 是否有这个后缀字节
+/**<br>
+ 是否有这个后缀字节<br>
  */
+```ObjectiveC
 - (BOOL)u_hasSuffixBytes:(const void *)suffix length:(NSUInteger)length;
+```
 
-
-/**
- 图片格式
+/**<br>
+ 图片格式<br>
  */
+```ObjectiveC
 @property (nonatomic, readonly) UImageFormat imageFormat;
+```
 
-
-/**
- 图片格式名称
+/**<br>
+ 图片格式名称<br>
  */
+```ObjectiveC
 @property (nonatomic, readonly, nullable, copy) NSString *imageMIMEType;
-
+```
 # NSArray
 # NSMutableArray
 # NSDate
