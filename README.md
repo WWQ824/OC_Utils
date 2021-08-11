@@ -11,15 +11,15 @@ OC工具类
 /**
  判断是否包含表情
  */
-
+```ObjectiveC
 @property (nonatomic, readonly) BOOL u_containsEmoji;
-
+```
 /**
  判断是否是干净的Int数据
  */
-
+```OC
 @property (nonatomic, readonly) BOOL u_isPureIntNumber;
-
+```
 /**
  判断是否是邮箱
  */
@@ -145,12 +145,13 @@ string encode编码
  @param maximum 最大长度
  @return YES：在此范围内，NO：不在此范围内
  */
+```OC
 - (BOOL)u_isLengthGreaterThanOrEqual:(NSInteger)minimum lessThanOrEqual:(NSInteger)maximum;
-
+```
 /**
  取出字符串中第一个url的rang
  */
-\- (NSRange)u_firstRangeOfURLSubstring;
+- (NSRange)u_firstRangeOfURLSubstring;
 
 /**
  取出字符串中第一个url
