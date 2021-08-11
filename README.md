@@ -551,12 +551,482 @@ string encode编码<br>
 ```
 
 # NSDate
+
+/** <br>
+ 是否是今天 <br>
+ */
+```ObjectiveC
+@property (nonatomic, readonly) BOOL u_isToday;
+```
+
+/** <br>
+ 是否是明天 <br>
+ */
+```ObjectiveC
+@property (nonatomic, readonly) BOOL u_isTomorrow;
+```
+
+/** <br>
+ 是否是昨天 <br>
+ */
+```ObjectiveC
+@property (nonatomic, readonly) BOOL u_isYesterday;
+```
+
+/** <br>
+ 是否是这个月 <br>
+ */
+```ObjectiveC
+@property (nonatomic, readonly) BOOL u_isThisMonth;
+```
+
+/** <br>
+ 是否是今年 <br>
+ */
+```ObjectiveC
+@property (nonatomic, readonly) BOOL u_isThisYear;
+```
+
+/** <br>
+ 是否是明年 <br>
+ */
+```ObjectiveC
+@property (nonatomic, readonly) BOOL u_isNextYear;
+```
+
+/** <br>
+ 是否是去年 <br>
+ */
+```ObjectiveC
+@property (nonatomic, readonly) BOOL u_isLastYear;
+```
+
+/** <br>
+ 是否是将来 <br>
+ */
+```ObjectiveC
+@property (nonatomic, readonly) BOOL u_isInFuture;
+```
+
+/** <br>
+ 是否是过去 <br>
+ */
+```ObjectiveC
+@property (nonatomic, readonly) BOOL u_isInPast;
+```
+
+/** <br>
+ 获取year <br>
+ */
+```ObjectiveC
+@property (nonatomic, readonly) NSInteger u_year;
+```
+
+/** <br>
+ 获取month <br>
+ */
+```ObjectiveC
+@property (nonatomic, readonly) NSInteger u_month;
+```
+
+/** <br>
+ 获取day <br>
+ */
+```ObjectiveC
+@property (nonatomic, readonly) NSInteger u_day;
+```
+
+/** <br>
+ 获取一年内的第几周 <br>
+ */
+```ObjectiveC
+@property (nonatomic, readonly) NSInteger u_weekOfYear;
+```
+
+/** <br>
+ 获取星期几 <br>
+ */
+```ObjectiveC
+@property (nonatomic, readonly) NSInteger u_weekday;
+```
+
+/** <br>
+ 表示WeekDay在下一个更大的日历单元中的位置。例如WeekDay=3，WeekDayOrdinal=2  就表示这个月的第2个周二。 <br>
+ */
+```ObjectiveC
+@property (nonatomic, readonly) NSInteger u_weekdayOrdinal;
+```
+
+/** <br>
+ 获取小时 <br>
+ */
+```ObjectiveC
+@property (nonatomic, readonly) NSInteger u_hour;
+```
+
+/** <br>
+ 获取分钟 <br>
+ */
+```ObjectiveC
+@property (nonatomic, readonly) NSInteger u_minute;
+```
+
+/** <br>
+ 获取秒 <br>
+ */
+```ObjectiveC
+@property (nonatomic, readonly) NSInteger u_seconds;
+```
+
+/** <br>
+ 转换成一定格式的string <br>
+ 若format为nil ,默认为 yyyy.MM.dd HH: mm: ss 格式 <br>
+ @param format 格式 <br>
+ @return 返回string <br>
+ */
+```ObjectiveC
+- (NSString *)u_stringRepresentationWithDateFormat:(nullable NSString *)format;
+```
+
+/** <br>
+ string转Date <br>
+ @param string 时间String <br>
+ @param format 格式 <br>
+ @return Date <br>
+ */
+```ObjectiveC
++ (nullable NSDate *)u_dateWithString:(NSString *)string format:(NSString *)format;
+```
+
+/** <br>
+ 判断时间是否相等（忽略time） <br>
+ @param aDate 时间 <br>
+ */
+```ObjectiveC
+- (BOOL)u_isEqualToDateIgnoringTime:(NSDate *)aDate;
+```
+
+/** <br>
+ 判断是否是同一周 <br>
+ @param aDate 时间 <br>
+ @param firstWeekday first weekday in a week (1-Sunday, 2-Monday, 3-Tuesday...) <br>
+ */
+```ObjectiveC
+- (BOOL)u_isSameWeekAsDate:(NSDate *)aDate firstWeekday:(NSUInteger)firstWeekday;
+```
+
+/** <br>
+ 判断是否是同一个月 <br>
+ */
+```ObjectiveC
+- (BOOL)u_isSameMonthAsDate:(NSDate *)aDate;
+```
+
+/** <br>
+ 判断是否是同一年 <br>
+ */
+```ObjectiveC
+- (BOOL)u_isSameYearAsDate:(NSDate *)aDate;
+```
+
+/** <br>
+ 跟另一个时间比早 <br>
+ @param otherDate 另一个时间 <br>
+ @return YES：比otherDate早 NO：比otherDate不早 <br>
+ */
+```ObjectiveC
+- (BOOL)u_earlierThan:(NSDate *)otherDate;
+```
+
+/** <br>
+  跟另一个时间比晚 <br>
+ @param otherDate 另一个时间 <br>
+ @return YES：比otherDate晚 NO：比otherDate不晚 <br>
+ */
+```ObjectiveC
+- (BOOL)u_laterThan:(NSDate *)otherDate;
+```
+
+/** <br>
+ string按一定的格式转换date <br>
+ 格式：@"yyyy-MM-dd HH:mm:ss"  <br>
+ @param dateString 时间string <br>
+ @return date <br>
+ */
+```ObjectiveC
++ (NSDate *)dateFromLongString:(NSString *)dateString;
+```
+
+/** <br>
+ string按一定的格式转换date <br>
+ 格式：@"yyyyMMdd"  <br>
+ @param dateString 时间string <br>
+ @return date <br>
+ */
+```ObjectiveC
++ (NSDate *)dateFromDayString:(NSString *)dateString;
+```
+
+/** <br>
+ 格式化数据 <br>
+ @param date date <br>
+ @param timeString 将替换的时间 <br>
+ @return date 格式：@"yyyy-MM-dd HH:mm" <br>
+ */
+```ObjectiveC
++ (NSDate *)dateFromDate:(NSDate *)date replaceWithTimeString:(NSString *)timeString;
+```
+
+/** <br>
+ date转string <br>
+ 格式："M月d日 HH:mm"  <br>
+ @param date date <br>
+ @return string <br>
+ */
+```ObjectiveC
++ (NSString *)stringFromDate1:(NSDate *)date;
+```
+
+/** <br>
+ date转string <br>
+ 格式："yyyy-MM-dd"  <br>
+ @param date date <br>
+ @return string <br>
+ */
+```ObjectiveC
++ (NSString *)stringFromDate2:(NSDate *)date;
+```
+
+/** <br>
+ date转string <br>
+ 格式："yyyyMMdd"  <br>
+ @param date date <br>
+ @return string <br>
+ */
+```ObjectiveC
++ (NSString *)stringFromDate3:(NSDate *)date;
+```
+
+/** <br>
+ date转string <br>
+ 格式："yyyy-MM-dd HH:mm:ss"  <br>
+ @param date date <br>
+ @return string <br>
+ */
+```ObjectiveC
++ (NSString *)stringFromDate4:(NSDate *)date;
+```
+
+/** <br>
+ date转string <br>
+ 格式："yyyy年MM月dd日"  <br>
+ @param date date <br>
+ @return string <br>
+ */
+```ObjectiveC
++ (NSString *)stringFromDate5:(NSDate *)date;
+```
+
+/** <br>
+ date转string <br>
+ 格式："M'.'d"  <br>
+ @param date date <br>
+ @return string <br>
+ */
+```ObjectiveC
++ (NSString *)dateStringFromDate5:(NSDate *)date;
+```
+
+/** <br>
+ date转string <br>
+ 格式："M月d日"  <br>
+ @param date date <br>
+ @return string <br>
+ */
+```ObjectiveC
++ (NSString *)dateStringFromDate:(NSDate *)date;
+```
+
+/** <br>
+ date转string <br>
+ 格式："HH:mm"  <br>
+ @param date date <br>
+ @return string <br>
+ */
+```ObjectiveC
++ (NSString *)timeStringFromDate:(NSDate *)date;
+```
+
+/** <br>
+ date转string <br>
+ 格式："EEEE"  <br>
+ @param date date <br>
+ @return string <br>
+ */
+```ObjectiveC
++ (NSString *)weekdayFromDate:(NSDate *)date;
+```
+
+/** <br>
+ date转string <br>
+ 格式："M月d日 EEEE"  <br>
+ @param date date <br>
+ @return string <br>
+ */
+```ObjectiveC
++ (NSString *)weekdayFromDate1:(NSDate *)date;
+```
+
+/** <br>
+ date转string <br>
+ 格式："M月d日 EEEE"  <br>
+ @param date date <br>
+ @return string <br>
+ */
+```ObjectiveC
++ (NSString *)weekdayFromDate2:(NSDate *)date;
+```
+
+/** <br>
+ date转string <br>
+ 格式："yyyy-MM-dd HH:mm:ss.SSS"  <br>
+ @param date date <br>
+ @return string <br>
+ */
+```ObjectiveC
++ (NSString *)longStringFromDate:(NSDate *)date;
+```
+
 # NSAttributedString
-# NSDateFormatter
+
+/** <br>
+ 初始化 <br>
+ */
+```ObjectiveC
+- (instancetype)initWithString:(NSString *)string font:(UIFont *)font foregroundColor:(UIColor *)foregroundColor lineSpacing:(CGFloat)lineSpacing;
+```
+
+/** <br>
+ 计算AttributedString的高度  <br>
+ @param maxWidth 最大宽 <br>
+ @return 返回AttributedString的高度 <br>
+ */
+```ObjectiveC
+- (CGFloat)u_heightConstrainedToWidth:(CGFloat)maxWidth;
+```
+
+/** <br>
+ 计算AttributedString的高度  <br>
+ @param font 字体 <br>
+ @param lineSpacing 行间距 <br>
+ @param maxWidth 最大宽 <br>
+ @param maxLineCount 最大行数 <br>
+ @return 返回AttributedString的高度 <br>
+ */
+```ObjectiveC
+- (CGFloat)u_heightWithFont:(UIFont *)font
+                  lineSpacing:(CGFloat)lineSpacing
+           constrainedToWidth:(CGFloat)maxWidth
+                    lineCount:(NSUInteger)maxLineCount;
+    
+- (CGFloat)u_heightWithFont:(UIFont *)font
+                  lineSpacing:(CGFloat)lineSpacing
+          firstLineHeadIndent:(CGFloat)firstLineHeadIndent
+           constrainedToWidth:(CGFloat)maxWidth
+                    lineCount:(NSUInteger)maxLineCount;
+
+- (CGFloat)u_heightWithFont:(UIFont *)font
+                  lineSpacing:(CGFloat)lineSpacing
+          firstLineHeadIndent:(CGFloat)firstLineHeadIndent
+           constrainedToWidth:(CGFloat)maxWidth
+                    lineCount:(NSUInteger)maxLineCount
+                      options:(NSStringDrawingOptions)options;
+````
+
 # NSDictionary
+
+/** <br>
+ 字典转url字符串 <br>
+ */
+```ObjectiveC
+- (NSString *)u_stringRepresentationByURLEncoding;
+```
+
+/** <br>
+ 根据key取字符串  <br>
+ @param key key字符串 <br>
+ */
+```ObjectiveC
+- (NSString *)u_stringForKey:(KeyType)key;
+```
+
+/** <br>
+ 根据key取integer  <br>
+ @param key key字符串 <br>
+ */
+```ObjectiveC
+- (NSInteger)u_integerForKey:(KeyType)key;
+```
+
+/** <br>
+ 根据key取double  <br>
+ @param key key字符串 <br>
+ */
+```ObjectiveC
+- (double)u_doubleForKey:(KeyType)key;
+```
+
+/** <br>
+ 根据key取bool <br>
+ @param key key字符串 <br>
+ */
+```ObjectiveC
+- (BOOL)u_boolForKey:(KeyType)key;
+```
+
+/** <br>
+ 根据key取数组 <br>
+ @param key key字符串 <br>
+ */
+```ObjectiveC
+- (NSArray<id> *)u_arrayForKey:(KeyType)key;
+```
+
+/** <br>
+ 根据key取字典 <br>
+ @param key key字符串 <br>
+ */
+```ObjectiveC
+- (NSDictionary<id, id> *)u_dictionaryForKey:(KeyType)key;
+```
+
+/** <br>
+ 字典转json字符串 <br>
+ */
+```ObjectiveC
+- (nullable NSString *)u_JSONString;
+```
+
+/** <br>
+ 字典转json字符串 <br>
+ */
+```ObjectiveC
+- (NSArray<KeyType> *)u_duplicateKeysWithDictionary:(NSDictionary<KeyType, id> *)otherDictionary;
+```
+
+/** <br>
+ 是否包含某key <br>
+ @param key key名称 <br>
+ */
+```ObjectiveC
+- (BOOL)u_hasKey:(KeyType)key;
+```
+
 # NSNumber
-# NSError
-# NSFileManager
-# NSNull
-# NSObject
-# NSURL
+
+/** <br>
+  number 转 string <br>
+ */
+```ObjectiveC
+@property (nonatomic, readonly, copy) NSString *u_formattedString;
+```
