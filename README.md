@@ -51,10 +51,10 @@ OC工具类
 @property (nonatomic, readonly) BOOL u_isPureDecimalDigits;
 ```
 
-/**
- 是否包含非法字符
- @return YES：包含了非法字符 NO：没有包含非法字符
- */
+/**  
+是否包含非法字符  
+@return YES：包含了非法字符 NO：没有包含非法字符  
+*/
 ```ObjectiveC
 @property (nonatomic, readonly) BOOL u_containInvalidString;
 ```
