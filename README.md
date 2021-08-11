@@ -17,7 +17,7 @@ OC工具类
 /**
  判断是否是干净的Int数据
  */
-```OC
+```ObjectiveC
 @property (nonatomic, readonly) BOOL u_isPureIntNumber;
 ```
 /**
@@ -135,8 +135,9 @@ string encode编码
  @param string 版本号
  @return 升序、降序、相等
  */
-\- (NSComparisonResult)u_versionNumberCompare:(NSString *)string;
-
+```ObjectiveC
+- (NSComparisonResult)u_versionNumberCompare:(NSString *)string;
+```
 
 /**
  长度是否在一个范围之内, 包括范围值
@@ -145,7 +146,7 @@ string encode编码
  @param maximum 最大长度
  @return YES：在此范围内，NO：不在此范围内
  */
-```OC
+```ObjectiveC
 - (BOOL)u_isLengthGreaterThanOrEqual:(NSInteger)minimum lessThanOrEqual:(NSInteger)maximum;
 ```
 /**
