@@ -442,6 +442,114 @@ string encode编码<br>
 ```
 
 # NSMutableArray
+
+/** <br>
+ 生成一定容量的数组 <br>
+ @param capacity 容量 <br>
+ @return 数组 <br>
+ */
+```ObjectiveC
++ (NSMutableArray<ObjectType> *)u_nullArrayWithCapacity:(NSUInteger)capacity;
+```
+
+/** <br>
+ 根据正则删除符合的对象 <br>
+ @param predicate 正则 <br>
+ */
+```ObjectiveC
+- (void)u_removeObjectsPassingTest:(BOOL (^)(id obj, NSUInteger idx, BOOL *stop))predicate;
+```
+
+/** <br>
+ 超出最大容量删除老的数据 <br>
+ @param maxCount 最大容量 <br>
+ */
+```ObjectiveC
+- (void)u_removeLatterObjectsToKeepObjectsNoMoreThan:(NSInteger)maxCount;
+```
+
+/** <br>
+ 将 index 位置处的 object 替换成 anotherObject <br>
+ */
+```ObjectiveC
+- (void)u_replaceObjectAtIndex:(NSUInteger)index withObject:(ObjectType)anotherObject;
+```
+
+/** <br>
+ 将anObject替换成anotherObject <br>
+ */
+```ObjectiveC
+- (void)u_replaceObject:(ObjectType)anObject withObject:(ObjectType)anotherObject;
+```
+
+/** <br>
+ 插入对象 <br>
+ @param anObject 对象 <br>
+ */
+```ObjectiveC
+- (void)u_insertUniqueObject:(ObjectType)anObject;
+```
+
+/** <br>
+ 将对象插入某一位置 <br>
+ @param anObject 对象 <br>
+ @param index 位置 <br>
+ */
+```ObjectiveC
+- (void)u_insertUniqueObject:(ObjectType)anObject atIndex:(NSInteger)index;
+```
+
+/** <br>
+ 从otherArray插入对象（去重） <br>
+ @param otherArray 另一个数据 <br>
+ */
+```ObjectiveC
+- (void)u_insertUniqueObjectsFromArray:(NSArray<ObjectType> *)otherArray;
+```
+
+/** <br>
+ insert a nullable object, if the object is nil, does nothing  <br>
+ @param anObject an object to insert <br>
+ @param index the index where to insert <br>
+ */
+```ObjectiveC
+- (void)u_insertNullableObject:(nullable ObjectType)anObject atIndex:(NSUInteger)index;
+```
+
+/** <br>
+ 从otherArray追加对象 <br>
+ @param otherArray 另一个数组 <br>
+ */
+```ObjectiveC
+- (void)u_appendUniqueObjectsFromArray:(NSArray<ObjectType> *)otherArray;
+```
+
+/** <br>
+ 添加可空的对象 <br>
+ @param anObject 可能为nil的对象 <br>
+ */ 
+```ObjectiveC
+- (void)u_appendNullableObject:(nullable ObjectType)anObject;
+```
+
+/** <br>
+ 将对象移到另一个位置 <br>
+ @param object 对象 <br>
+ @param index 另外的位置 <br>
+ */
+```ObjectiveC
+- (void)u_moveObject:(ObjectType)object toIndex:(NSUInteger)index;
+```
+
+/** <br>
+ 从otherArray中获取下一页数据并加入当前数组 <br>
+ @param otherArray 另一个数组 <br>
+ @param pageSize 一页数量 <br>
+ */
+```ObjectiveC
+- (BOOL)u_appendObjectsInLastPageFromArray:(NSArray<ObjectType> *)otherArray pageSize:(NSUInteger)pageSize;
+```
+
 # NSDate
 # NSAttributedString
 # NSDateFormatter
