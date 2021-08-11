@@ -98,15 +98,6 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, nullable, readonly, copy) NSString *u_base64DecodedSafe;
 
-/**
- PPTV base64转码
- */
-@property (nonatomic, readonly, copy) NSString *u_PPTVBase64Encoded;
-
-/**
- PPTV base64解码
- */
-@property (nonatomic, readonly, copy) NSString *u_PPTVBase64Decoded;
 
 /**
  去空格、空行

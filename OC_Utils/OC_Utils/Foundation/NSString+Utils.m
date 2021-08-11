@@ -284,50 +284,6 @@
     return string;
 }
 
-
-- (NSString *)u_PPTVBase64Encoded {
-    NSData *stringData = [self dataUsingEncoding:NSUTF8StringEncoding];
-    NSUInteger stringLength = [stringData length];
-    unsigned char *stringBytes = (unsigned char *)[stringData bytes];
-    
-    NSString *keyString = @"pplive";
-    NSData *keyData = [keyString dataUsingEncoding:NSUTF8StringEncoding];
-    NSUInteger keyLength = [keyData length];
-    unsigned char *keyBytes = (unsigned char *)[keyData bytes];
-    
-    for (int i = 0; i < stringLength; i ++) {
-        stringBytes[i] = (unsigned char)((int)stringBytes[i] + (int)keyBytes[i % keyLength]);
-    }
-    
-    NSData *decodeStringData = [NSData dataWithBytes:stringBytes
-                                              length:stringLength];
-    
-    
-    return [decodeStringData base64EncodedStringWithOptions:(NSDataBase64EncodingOptions)0];
-}
-
-
-- (NSString *)u_PPTVBase64Decoded {
-    NSData *encodeStrData = [self dataUsingEncoding:NSUTF8StringEncoding];
-    NSData *stringData = [encodeStrData u_base64Decoded];
-    NSUInteger stringLength = [stringData length];
-    unsigned char *stringBytes = (unsigned char *)[stringData bytes];
-    
-    NSString *keyString = @"pplive";
-    NSData *keyData = [keyString dataUsingEncoding:NSUTF8StringEncoding];
-    NSUInteger keyLength = [keyData length];
-    unsigned char *keyBytes = (unsigned char *)[keyData bytes];
-    
-    for (int i = 0; i < stringLength; i++) {
-        stringBytes[i] = (unsigned char)((int)stringBytes[i] - (int)keyBytes[i % keyLength]);
-    }
-    
-    NSString *decodeString = [NSString stringWithUTF8String:(const char *)stringBytes];
-    
-    return decodeString;
-}
-
-
 - (NSString *)u_stringByTrimmingWhitespaceAndNewlineCharacters {
     return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 }
