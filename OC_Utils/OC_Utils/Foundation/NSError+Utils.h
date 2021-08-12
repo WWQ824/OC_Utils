@@ -20,7 +20,7 @@ extern NSInteger const UNetworkErrorCodeDataFormatNotAsExpected;
 extern NSInteger const UNetworkErrorCodeCannotConvertToCustomValue;
 
 extern NSString * const UObjectParsingErrorDomain;
-extern NSInteger const UObjectParsingErrorCodeNotSPTObjectSubclass;
+extern NSInteger const UObjectParsingErrorCodeNotUObjectSubclass;
 
 extern NSString * const UServerBusinessErrorKeyDomain;
 

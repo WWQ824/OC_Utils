@@ -5,6 +5,7 @@
 //  Created by WWQ on 2021/8/10.
 //
 
+#import "WWQTableViewController.h"
 #import "ViewController.h"
 #import "UIColor+Utils.h"
 
@@ -32,7 +33,7 @@ typedef backBlock(^TestBlock)(BOOL);
     [super viewDidLoad];
     
     [self configSubviews];
-    
+    [self addButton];
     [self test];
     
 }
@@ -92,7 +93,7 @@ typedef backBlock(^TestBlock)(BOOL);
     
     for (NSInteger index = 0; index < colors.count; index++) {
         UIColor *color = colors[index];
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(index % column * (margin + wh) + margin, index / column * (margin + wh) + 50, wh, wh)];
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(index % column * (margin + wh) + margin, index / column * (margin + wh) + 100, wh, wh)];
         label.layer.cornerRadius = 5;
         label.layer.borderWidth = 2;
         label.layer.borderColor = color.CGColor;
@@ -105,6 +106,22 @@ typedef backBlock(^TestBlock)(BOOL);
     }
     
 }
+
+
+- (void)addButton {
+    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(20, self.view.bounds.size.height - 78, 100, 44)];
+    btn.backgroundColor = UIColor.u_bloodOrange;
+    [btn setTitle:@"JumpToVC" forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(jumpToVC) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btn];
+}
+
+- (void)jumpToVC {
+    WWQTableViewController *wwqVC = [[WWQTableViewController alloc] init];
+    [self.navigationController pushViewController:wwqVC animated:YES];
+}
+
+
 
 
 - (void)test {

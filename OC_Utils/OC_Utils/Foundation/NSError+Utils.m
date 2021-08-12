@@ -18,7 +18,7 @@ NSInteger const UNetworkErrorCodeDataFormatNotAsExpected = 3;
 NSInteger const UNetworkErrorCodeCannotConvertToCustomValue = 4;
 
 NSString * const UObjectParsingErrorDomain = @"com.wwq.utilsgroup.error.domain.objectparsing";
-NSInteger const UObjectParsingErrorCodeNotSPTObjectSubclass = 1;
+NSInteger const UObjectParsingErrorCodeNotUObjectSubclass = 1;
 
 NSString * const UServerBusinessErrorKeyDomain = @"com.wwq.utilsgroup.error.domain.serverbussiness";
 

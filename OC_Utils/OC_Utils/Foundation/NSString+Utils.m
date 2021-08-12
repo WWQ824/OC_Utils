@@ -290,11 +290,11 @@
 
 
 - (NSString *)u_URLEncoded {
-    static NSString * const SPTCharactersGeneralDelimitersToEncode = @":#[]@"; // does not include "?" or "/" due to RFC 3986 - Section 3.4
-    static NSString * const SPTCharactersSubDelimitersToEncode = @"!$&'()*+,;=";
+    static NSString * const UCharactersGeneralDelimitersToEncode = @":#[]@"; // does not include "?" or "/" due to RFC 3986 - Section 3.4
+    static NSString * const UCharactersSubDelimitersToEncode = @"!$&'()*+,;=";
     
     NSMutableCharacterSet *allowedCharacterSet = [[NSCharacterSet URLQueryAllowedCharacterSet] mutableCopy];
-    [allowedCharacterSet removeCharactersInString:[SPTCharactersGeneralDelimitersToEncode stringByAppendingString:SPTCharactersSubDelimitersToEncode]];
+    [allowedCharacterSet removeCharactersInString:[UCharactersGeneralDelimitersToEncode stringByAppendingString:UCharactersSubDelimitersToEncode]];
     
     // FIXME: https://github.com/AFNetworking/AFNetworking/pull/3028
     // return [string stringByAddingPercentEncodingWithAllowedCharacters:allowedCharacterSet];
