@@ -121,7 +121,6 @@
 
 
 - (NSString *)u_hexString {
-    //TODO wjd
     CGFloat r = 0;
     CGFloat g = 0;
     CGFloat b = 0;
