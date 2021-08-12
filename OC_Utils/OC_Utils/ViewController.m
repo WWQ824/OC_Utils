@@ -17,9 +17,10 @@ typedef backBlock(^TestBlock)(BOOL);
 
 @interface ViewController ()
 
-@property (nonatomic, assign) int result;
+@property (nonatomic, assign) NSInteger result;
 
 @property (nonatomic, copy) ViewController *(^add)(int);
+
 @property (nonatomic, copy) TestBlock testBlock;
 
 
@@ -30,29 +31,10 @@ typedef backBlock(^TestBlock)(BOOL);
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    void (^block)(void) = ^(void) {
-        NSLog(@"无返回值无参");
-    };
-    void (^block1)(int) = ^(int n) {
-        NSLog(@"无返回值有参--%@", @(n));
-    };
-    
-    int (^block2)(int) = ^(int n) {
-        NSLog(@"有返回值有参--%@", @(n));
-        return n;
-    };
-    
-    block();
-    block1(100);
-    block2(200);
-
-    self.add(1).add(2).add(3);
-    [self add](1);
-    NSLog(@"%@", @(self.result));
-    // 最后一个不会有打印,是因为返回的block未调用
-    self.testBlock(YES)(20).testBlock(NO)(60).testBlock(YES);
- 
     [self configSubviews];
+    
+    [self test];
+    
 }
 
 
@@ -122,6 +104,32 @@ typedef backBlock(^TestBlock)(BOOL);
         [self.view addSubview:label];
     }
     
+}
+
+
+- (void)test {
+    
+    void (^block)(void) = ^(void) {
+        NSLog(@"无返回值无参");
+    };
+    void (^block1)(int) = ^(int n) {
+        NSLog(@"无返回值有参--%@", @(n));
+    };
+    
+    int (^block2)(int) = ^(int n) {
+        NSLog(@"有返回值有参--%@", @(n));
+        return n;
+    };
+    
+    block();
+    block1(100);
+    block2(200);
+
+    self.add(1).add(2).add(3);
+    [self add](1);
+    NSLog(@"%@", @(self.result));
+    // 最后一个不会有打印,是因为返回的block未调用
+    self.testBlock(YES)(20).testBlock(NO)(60).testBlock(YES);
 }
 
 
