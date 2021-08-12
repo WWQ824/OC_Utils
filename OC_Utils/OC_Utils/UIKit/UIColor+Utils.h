@@ -36,10 +36,14 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, class, readonly) UIColor *u_titleRagularColor;
 
 
+/**
+  获取颜色16进制字符串
+ */
 @property (nonatomic,strong, readonly) NSString *u_hexString;
 
 /**
  构造color
+ 
  @param r 整数 0~255
  @param g 整数 0~255
  @param b 整数 0~255

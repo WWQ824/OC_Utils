@@ -18,9 +18,11 @@ typedef NS_ENUM(NSUInteger, UImageCropperAlignment) {
     UImageCropperAlignmentRight,
 };
 
-
+// 获取屏幕缩放比
 extern CGFloat u_screen_scale(void);
+// 绘制水平渐变
 extern void u_draw_horizontal_gradient(CGContextRef context, CGSize size, NSArray<UIColor *> *colors);
+// 绘制垂直渐变
 extern void u_draw_vertical_gradient(CGContextRef context, CGSize size, NSArray<UIColor *> *colors);
 
 

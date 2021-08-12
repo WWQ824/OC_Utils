@@ -17,7 +17,7 @@ CGFloat u_screen_scale(void) {
 }
 
 
-void spt_draw_horizontal_gradient(CGContextRef context, CGSize size, NSArray<UIColor *> *colors) {
+void u_draw_horizontal_gradient(CGContextRef context, CGSize size, NSArray<UIColor *> *colors) {
     if (colors.count <= 1) {
         return;
     }
@@ -76,7 +76,7 @@ void spt_draw_horizontal_gradient(CGContextRef context, CGSize size, NSArray<UIC
 }
 
 
-void spt_draw_vertical_gradient(CGContextRef context, CGSize size, NSArray<UIColor *> *colors) {
+void u_draw_vertical_gradient(CGContextRef context, CGSize size, NSArray<UIColor *> *colors) {
     if (colors.count <= 1) {
         return;
     }
@@ -723,7 +723,7 @@ static void _u_cleanupBuffer(void *userData, void *buf_data) {
     NSString *resultString = [self u_trimImageBase64Header:base64String];
     if (resultString.length > 0) {
         NSData *imageData = [[NSData alloc] initWithBase64EncodedString:resultString options:NSDataBase64DecodingIgnoreUnknownCharacters];
-        NSAssert(img == nil, @"要引入<SDWebImage/UIImage+MultiFormat.h>");
+        NSAssert(NO, @"要引入<SDWebImage/UIImage+MultiFormat.h>");
 #warning 要引入<SDWebImage/UIImage+MultiFormat.h>
 //        img = [UIImage sd_imageWithData:imageData];
     }
